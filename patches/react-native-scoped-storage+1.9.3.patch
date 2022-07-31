@@ -1,0 +1,13 @@
+diff --git a/node_modules/react-native-scoped-storage/android/src/main/java/com/ammarahmed/scopedstorage/RNScopedStorageModule.java b/node_modules/react-native-scoped-storage/android/src/main/java/com/ammarahmed/scopedstorage/RNScopedStorageModule.java
+index 5bb1f26..0555a0e 100644
+--- a/node_modules/react-native-scoped-storage/android/src/main/java/com/ammarahmed/scopedstorage/RNScopedStorageModule.java
++++ b/node_modules/react-native-scoped-storage/android/src/main/java/com/ammarahmed/scopedstorage/RNScopedStorageModule.java
+@@ -779,7 +779,7 @@ public class RNScopedStorageModule extends ReactContextBaseJavaModule {
+             }
+ 
+             byte[] bytes = stringToBytes(data, encoding);
+-            OutputStream fout = reactContext.getContentResolver().openOutputStream(file.getUri(), append ? "wa" : "w");
++            OutputStream fout = reactContext.getContentResolver().openOutputStream(file.getUri(), append ? "wa" : "wt");
+             try {
+                 fout.write(bytes);
+                 written = bytes.length;
