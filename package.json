@@ -1,13 +1,20 @@
 {
   "name": "mynotes",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/M4RC3L05/mynotes.git"
+  },
   "scripts": {
     "android": "react-native run-android",
     "start": "react-native start",
     "postinstall": "patch-package",
     "prepare": "husky install",
-    "lint-staged": "lint-staged"
+    "lint": "eslint . --ext .ts,.tsx,.js",
+    "lint-staged": "lint-staged",
+    "np": "np --no-publish --yolo --no-yarn --any-branch --message 'v%s'",
+    "postversion": "auto-changelog && git add CHANGELOG.md && react-native-version --target android"
   },
   "eslintConfig": {
     "parser": "@typescript-eslint/parser",
@@ -75,6 +82,7 @@
     "@types/showdown": "^2.0.0",
     "@typescript-eslint/eslint-plugin": "^5.31.0",
     "@typescript-eslint/parser": "^5.31.0",
+    "auto-changelog": "^2.4.0",
     "eslint": "^8.20.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-xo": "^0.41.0",
@@ -87,8 +95,10 @@
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "metro-react-native-babel-preset": "^0.70.3",
+    "np": "^7.6.2",
     "patch-package": "^6.4.7",
     "prettier": "^2.7.1",
+    "react-native-version": "^4.0.0",
     "typescript": "^4.4.4"
   }
 }
