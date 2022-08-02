@@ -1,4 +1,4 @@
-package com.mynotes.newarchitecture.modules;
+package com.m4rc3l05.mynotes.newarchitecture.modules;
 
 import com.facebook.jni.HybridData;
 import com.facebook.react.ReactPackage;
