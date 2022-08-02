@@ -1,4 +1,4 @@
-package com.mynotes;
+package com.m4rc3l05.mynotes;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
