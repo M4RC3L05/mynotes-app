@@ -14,6 +14,7 @@ export function NoteCardAction({ onPress, text }: PropsWithoutRef<{ onPress: () 
         justifyContent: "center",
         alignContent: "space-between",
         paddingVertical: 8,
+        paddingHorizontal: 8,
       }}
       onPress={onPress}
     >

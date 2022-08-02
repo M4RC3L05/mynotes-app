@@ -9,7 +9,8 @@ export function NoteCard({
   item,
   onView,
   onDelete,
-}: PropsWithoutRef<{ item: NoteFile; onView: () => void; onDelete: () => void }>) {
+  onRename,
+}: PropsWithoutRef<{ item: NoteFile; onView: () => void; onDelete: () => void; onRename: () => void }>) {
   const theme = useTheme();
 
   return (
@@ -41,10 +42,11 @@ export function NoteCard({
         style={{
           flexDirection: "row",
           backgroundColor: theme.color.noteCardActionsSection,
-          paddingHorizontal: 18,
+          paddingStart: 10,
         }}
       >
         <NoteCardAction text="View" onPress={onView} />
+        <NoteCardAction text="Rename" onPress={onRename} />
         <NoteCardAction text="Delete" onPress={onDelete} />
       </View>
     </View>

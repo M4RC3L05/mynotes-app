@@ -6,4 +6,5 @@ export type INoteRepository = {
   getNoteFiles(dirUri: string): Promise<NoteFile[]>;
   getNoteFileContents(note: NoteFile): Promise<string>;
   saveNoteContents(dirUri: string, note: NoteFile, data: string): Promise<string>;
+  renameNote(note: NoteFile, newName: string): Promise<string>;
 };
