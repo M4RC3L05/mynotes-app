@@ -1,4 +1,4 @@
-package com.mynotes.newarchitecture;
+package com.m4rc3l05.mynotes.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -19,9 +19,9 @@ import com.facebook.react.fabric.CoreComponentsRegistry;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.fabric.ReactNativeConfig;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.mynotes.BuildConfig;
-import com.mynotes.newarchitecture.components.MainComponentsRegistry;
-import com.mynotes.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import com.m4rc3l05.mynotes.BuildConfig;
+import com.m4rc3l05.mynotes.newarchitecture.components.MainComponentsRegistry;
+import com.m4rc3l05.mynotes.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 

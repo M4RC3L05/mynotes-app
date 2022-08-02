@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.mynotes">
+  package="com.m4rc3l05.mynotes">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
