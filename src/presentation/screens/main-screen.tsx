@@ -8,8 +8,10 @@ import { CreateNoteUseCaseFactory } from "../../domain/use-cases/create-note-use
 import { DeleteNoteUseCaseFactory } from "../../domain/use-cases/delete-note-use-case";
 import { GetNotesUseCaseFactory } from "../../domain/use-cases/get-notes-use-case";
 import { GetOrRequestANotesDirectoryUseCaseFactory } from "../../domain/use-cases/get-or-request-a-notes-directory-use-case";
-import { AddNoteModal } from "../components/add-note-modal";
+import { RenameNoteUseCaseFactory } from "../../domain/use-cases/rename-noto-use-case";
 import { AppBarAction } from "../components/appbar-action";
+import { AddNoteModal } from "../components/editable-models/add-note-modal";
+import { RenameNoteModal } from "../components/editable-models/rename-note-modal";
 import { Fab } from "../components/fab";
 import { NoteCard } from "../components/note-card";
 import { NoteSearch } from "../components/note-search";
@@ -19,16 +21,19 @@ import { TMainScreenNavigationProp } from "./screens";
 
 function MainScreen() {
   const [newNoteDialog, setNewNoteDialog] = useState(false);
+  const [renameNoteDialog, setRenameNoteDialog] = useState(false);
+  const [noteToRename, setNoteToRename] = useState<NoteFile | undefined>();
   const [noteFiles, setNoteFiles] = useState<NoteFile[]>([]);
   const [query, setQuery] = useState<string | undefined>(undefined);
-  const navigation = useNavigation<TMainScreenNavigationProp>();
   const [showSearch, setShowSearch] = useState(false);
+  const navigation = useNavigation<TMainScreenNavigationProp>();
   const theme = useTheme();
   const isFocus = useIsFocused();
   const { execute: getNotes, executing: gettingNotes } = useUseCase(GetNotesUseCaseFactory);
   const { execute: getOrSetNotesDir } = useUseCase(GetOrRequestANotesDirectoryUseCaseFactory);
   const { execute: createNote } = useUseCase(CreateNoteUseCaseFactory);
   const { execute: deleteNote } = useUseCase(DeleteNoteUseCaseFactory);
+  const { execute: renameNote } = useUseCase(RenameNoteUseCaseFactory);
 
   const filtered = useMemo(
     () => (query ? noteFiles.filter(({ name }) => name.toLowerCase().includes(query.toLowerCase())) : noteFiles),
@@ -78,6 +83,17 @@ function MainScreen() {
     } catch {}
   };
 
+  const handeRenameNote = async (newName: string) => {
+    try {
+      const notesDir = await getOrSetNotesDir();
+      await renameNote({ file: noteToRename!, newFileName: newName, notesDir });
+      await fetchNoteFiles();
+
+      setNoteToRename(undefined);
+      setRenameNoteDialog(false);
+    } catch {}
+  };
+
   return (
     <View style={{ flex: 1, backgroundColor: theme.color.bg }}>
       <NoteSearch
@@ -100,6 +116,10 @@ function MainScreen() {
         renderItem={({ item }) => (
           <NoteCard
             item={item}
+            onRename={() => {
+              setNoteToRename(item);
+              setRenameNoteDialog(true);
+            }}
             onDelete={() => {
               void removeNote(item);
             }}
@@ -122,6 +142,22 @@ function MainScreen() {
           }}
           onCreate={handleNewNoteDialog}
         />
+
+        {noteToRename ? (
+          <RenameNoteModal
+            show={renameNoteDialog}
+            note={noteToRename}
+            onCancel={() => {
+              setRenameNoteDialog(false);
+              setNoteToRename(undefined);
+            }}
+            onDismiss={() => {
+              setRenameNoteDialog(false);
+              setNoteToRename(undefined);
+            }}
+            onRename={handeRenameNote}
+          />
+        ) : null}
       </Portal>
       {isFocus ? (
         <Portal hostName="AppBarRightActions">

@@ -5,6 +5,10 @@ import { INoteRepository } from "../../domain/repositories/inote-repository";
 import { fileTypeToNoteFile } from "../mappers/scoped-storage-mappers";
 
 export class NoteRepository implements INoteRepository {
+  async renameNote(note: NoteFile, newName: string): Promise<string> {
+    return ScopedStorage.rename(note.uri, `${newName}.md`);
+  }
+
   async createNoteFile(dirUri: string, name: string): Promise<NoteFile> {
     const created = await ScopedStorage.createFile(dirUri, `${name}.md`, "text/markdown");
 
