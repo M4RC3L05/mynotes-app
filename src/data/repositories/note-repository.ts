@@ -20,7 +20,7 @@ export class NoteRepository implements INoteRepository {
   async getNoteFiles(dirUri: string): Promise<NoteFile[]> {
     const notes = await ScopedStorage.listFiles(dirUri);
 
-    return notes.map(fileTypeToNoteFile);
+    return notes.filter(({ mime }) => mime === "text/markdown").map(fileTypeToNoteFile);
   }
 
   async getNoteFileContents(note: NoteFile): Promise<string> {
