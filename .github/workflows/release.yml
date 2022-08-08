@@ -56,8 +56,7 @@ jobs:
           keyPassword: ${{ secrets.ANDROID_KEY_PASSWORD }}
           buildToolsVersion: 30.0.2
 
-      - name: Upload files to current github release
-        uses: svenstaro/upload-release-action@2.3.0
+      - name: Create release
+        uses: softprops/action-gh-release@v1
         with:
-          file: ${{steps.sign_app.outputs.signedFile}}
-          tag: ${{ github.ref }}
+          files: ${{steps.sign_app.outputs.signedFile}}
