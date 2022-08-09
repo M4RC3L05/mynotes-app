@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.3 - 2022-08-09
+
+- Fix lint error on `changelog-generator.mjs` - [5578813](https://github.com/M4RC3L05/mynotes/commit/557881324fd6e05fe4db2891815f320b0560aab9)
+
 ## v0.1.2 - 2022-08-09
 
 - Use new scrips - [5f0330f](https://github.com/M4RC3L05/mynotes/commit/5f0330fc725f7246fd3bc5bc72f13dfa18b1aea0)
