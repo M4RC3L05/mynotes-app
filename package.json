@@ -11,9 +11,9 @@
     "start": "react-native start",
     "postinstall": "patch-package",
     "prepare": "husky install",
-    "lint": "eslint . --ext .ts,.tsx,.js",
+    "lint": "eslint . --ext .ts,.tsx,.js,.mjs",
     "lint-staged": "lint-staged",
-    "postversion": "./.bin/changelog-generator > CHANGELOG.md && git add CHANGELOG.md && react-native-version --target android"
+    "release": "./bin/release.mjs"
   },
   "eslintConfig": {
     "parser": "@typescript-eslint/parser",
@@ -34,7 +34,9 @@
       "@typescript-eslint/ban-ts-comment": "off",
       "@typescript-eslint/prefer-ts-expect-error": "off",
       "simple-import-sort/imports": "error",
-      "simple-import-sort/exports": "error"
+      "simple-import-sort/exports": "error",
+      "@typescript-eslint/no-unsafe-assignment": "off",
+      "@typescript-eslint/no-unsafe-call": "off"
     },
     "ignorePatterns": [
       "node_modules",
@@ -68,7 +70,8 @@
     "react-native-system-navigation-bar": "^1.0.5",
     "react-native-vector-icons": "^9.2.0",
     "react-native-webview": "^11.23.0",
-    "showdown": "^2.1.0"
+    "showdown": "^2.1.0",
+    "zx": "^7.0.8"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
