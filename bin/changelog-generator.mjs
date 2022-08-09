@@ -2,7 +2,7 @@
 /* eslint-disable no-await-in-loop */
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 
-import { $, echo, argv } from "zx";
+import { $, argv, echo } from "zx";
 
 $.verbose = false;
 
