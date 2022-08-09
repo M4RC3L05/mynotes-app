@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint-disable @typescript-eslint/no-unsafe-return */
 /* eslint-disable no-await-in-loop */
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 
