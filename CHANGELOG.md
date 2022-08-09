@@ -1,3 +1,7 @@
+### v0.1.5 (2022-08-09)
+
+- [Re add `react-native-version`](https://github.com/M4RC3L05/mynotes/commit/a1d403b28a1c88a0fdd9536bade9acfa9d8dac42) 
+
 ### v0.1.4 (2022-08-09)
 
 - [Use `offline-github-changelog` and rever scripts](https://github.com/M4RC3L05/mynotes/commit/81b6d44d44d6156102147640f5ade2ecca154c5f) 
