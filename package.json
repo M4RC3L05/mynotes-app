@@ -13,7 +13,7 @@
     "prepare": "husky install",
     "lint": "eslint . --ext .ts,.tsx,.js,.mjs",
     "lint-staged": "lint-staged",
-    "version": "offline-github-changelog --next=${npm_new_version} | sed -e '/Release v.*/d;s/(\\[.*\\]\\(.*\\))//gm' > CHANGELOG.md && git add CHANGELOG.md"
+    "version": "react-native-version --target android --never-amend && offline-github-changelog --next=${npm_new_version} | sed -e '/Release v.*/d;s/(\\[.*\\]\\(.*\\))//gm' > CHANGELOG.md && git add ."
   },
   "eslintConfig": {
     "parser": "@typescript-eslint/parser",
