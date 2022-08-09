@@ -13,7 +13,7 @@
     "prepare": "husky install",
     "lint": "eslint . --ext .ts,.tsx,.js,.mjs",
     "lint-staged": "lint-staged",
-    "release": "./bin/release.mjs"
+    "version": "offline-github-changelog --next=${npm_new_version} | sed -e '/Release v.*/d;s/(\\[.*\\]\\(.*\\))//gm' > CHANGELOG.md && git add CHANGELOG.md"
   },
   "eslintConfig": {
     "parser": "@typescript-eslint/parser",
@@ -70,8 +70,7 @@
     "react-native-system-navigation-bar": "^1.0.5",
     "react-native-vector-icons": "^9.2.0",
     "react-native-webview": "^11.23.0",
-    "showdown": "^2.1.0",
-    "zx": "^7.0.8"
+    "showdown": "^2.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
@@ -97,6 +96,7 @@
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "metro-react-native-babel-preset": "^0.70.3",
+    "offline-github-changelog": "^2.5.0",
     "patch-package": "^6.4.7",
     "prettier": "^2.7.1",
     "react-native-version": "^4.0.0",
