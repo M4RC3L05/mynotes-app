@@ -1,3 +1,9 @@
+### v0.2.0 (2022-09-16)
+
+- [Update dependencies and fix lint problems](https://github.com/M4RC3L05/mynotes/commit/471fbe541633a18f02f83569a9278d2cf0cf1306)
+- [Patch `offline-github-chnagelog`](https://github.com/M4RC3L05/mynotes/commit/f71665894a6bd9c03913c647b581ce817eb39927)
+- [Fix version command sed regex](https://github.com/M4RC3L05/mynotes/commit/e6651ac11d61207238b066dd9df6b73d0abecfab)
+
 ### v0.1.5 (2022-08-09)
 
 - [Re add `react-native-version`](https://github.com/M4RC3L05/mynotes/commit/a1d403b28a1c88a0fdd9536bade9acfa9d8dac42)
