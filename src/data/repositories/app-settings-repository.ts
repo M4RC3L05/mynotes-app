@@ -1,8 +1,8 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import * as ScopedStorage from "react-native-scoped-storage";
+import type * as ScopedStorage from "react-native-scoped-storage";
 
 import { AppSettingsNotesDirSettings } from "../../domain/models/app-settings-notes-dir-settings";
-import { IAppSettingsRpository } from "../../domain/repositories/iapp-settings-repository";
+import type { IAppSettingsRpository } from "../../domain/repositories/iapp-settings-repository";
 import { SETTINGS_KEYS } from "../mappers/app-settings-mappers";
 
 export class AppSettingsRepository implements IAppSettingsRpository {

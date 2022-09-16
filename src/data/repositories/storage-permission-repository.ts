@@ -1,6 +1,6 @@
 import * as ScopedStorage from "react-native-scoped-storage";
 
-import { IStoragePermissionRepository } from "../../domain/repositories/istorage-permissions-repository";
+import type { IStoragePermissionRepository } from "../../domain/repositories/istorage-permissions-repository";
 
 export class StoragePermissionRepositry implements IStoragePermissionRepository {
   async hasPermissionToDir(dirUri: string): Promise<boolean> {

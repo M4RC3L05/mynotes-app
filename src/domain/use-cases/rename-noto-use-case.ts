@@ -1,11 +1,11 @@
 import { NoteRepository } from "../../data/repositories/note-repository";
 import { StoragePermissionRepositry } from "../../data/repositories/storage-permission-repository";
-import { NoteFile } from "../models/note-file";
-import { NotesDirectory } from "../models/notes-directory";
-import { INoteRepository } from "../repositories/inote-repository";
-import { IStoragePermissionRepository } from "../repositories/istorage-permissions-repository";
-import { IUseCase } from "./iuse-case";
-import { IUseCaseFactory } from "./use-case-factory";
+import type { NoteFile } from "../models/note-file";
+import type { NotesDirectory } from "../models/notes-directory";
+import type { INoteRepository } from "../repositories/inote-repository";
+import type { IStoragePermissionRepository } from "../repositories/istorage-permissions-repository";
+import type { IUseCase } from "./iuse-case";
+import type { IUseCaseFactory } from "./use-case-factory";
 
 type TRenameNoteUseCaseArgs = { notesDir: NotesDirectory; file: NoteFile; newFileName: string };
 

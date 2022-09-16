@@ -1,8 +1,8 @@
 import { NoteRepository } from "../../data/repositories/note-repository";
-import { NoteFile } from "../models/note-file";
-import { INoteRepository } from "../repositories/inote-repository";
-import { IUseCase } from "./iuse-case";
-import { IUseCaseFactory } from "./use-case-factory";
+import type { NoteFile } from "../models/note-file";
+import type { INoteRepository } from "../repositories/inote-repository";
+import type { IUseCase } from "./iuse-case";
+import type { IUseCaseFactory } from "./use-case-factory";
 
 type TDeleteNoteUseCaseArgs = {
   note: NoteFile;

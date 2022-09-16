@@ -1,7 +1,7 @@
 import { useCallback, useMemo, useRef, useState } from "react";
 
-import { IUseCase } from "../../domain/use-cases/iuse-case";
-import { IUseCaseFactory } from "../../domain/use-cases/use-case-factory";
+import type { IUseCase } from "../../domain/use-cases/iuse-case";
+import type { IUseCaseFactory } from "../../domain/use-cases/use-case-factory";
 
 type TFactoryConstructors<U extends IUseCase> = new () => IUseCaseFactory<U>;
 

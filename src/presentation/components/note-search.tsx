@@ -1,4 +1,5 @@
-import React, { PropsWithoutRef, useEffect, useRef, useState } from "react";
+import type { PropsWithoutRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { TextInput, TouchableOpacity, View } from "react-native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 

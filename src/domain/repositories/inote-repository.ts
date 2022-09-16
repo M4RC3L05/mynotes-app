@@ -1,4 +1,4 @@
-import { NoteFile } from "../models/note-file";
+import type { NoteFile } from "../models/note-file";
 
 export type INoteRepository = {
   createNoteFile(dirUri: string, name: string): Promise<NoteFile>;

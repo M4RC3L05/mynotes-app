@@ -1,10 +1,10 @@
 import { AppSettingsRepository } from "../../data/repositories/app-settings-repository";
 import { StoragePermissionRepositry } from "../../data/repositories/storage-permission-repository";
 import { AppSettingsNotesDirSettings } from "../models/app-settings-notes-dir-settings";
-import { IAppSettingsRpository } from "../repositories/iapp-settings-repository";
-import { IStoragePermissionRepository } from "../repositories/istorage-permissions-repository";
-import { IUseCase } from "./iuse-case";
-import { IUseCaseFactory } from "./use-case-factory";
+import type { IAppSettingsRpository } from "../repositories/iapp-settings-repository";
+import type { IStoragePermissionRepository } from "../repositories/istorage-permissions-repository";
+import type { IUseCase } from "./iuse-case";
+import type { IUseCaseFactory } from "./use-case-factory";
 
 export class SelectANotesDirectoryUseCase implements IUseCase<void, AppSettingsNotesDirSettings> {
   #appSettingsRepo: IAppSettingsRpository;

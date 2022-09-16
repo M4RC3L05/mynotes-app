@@ -1,5 +1,7 @@
-import React, { PropsWithoutRef } from "react";
-import { StyleProp, TouchableNativeFeedback, View, ViewStyle } from "react-native";
+import type { PropsWithoutRef } from "react";
+import React from "react";
+import type { StyleProp, ViewStyle } from "react-native";
+import { TouchableNativeFeedback, View } from "react-native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 import { useTheme } from "../theme/theme";

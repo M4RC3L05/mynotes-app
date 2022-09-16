@@ -1,4 +1,5 @@
-import React, { PropsWithoutRef, useEffect, useState } from "react";
+import type { PropsWithoutRef } from "react";
+import React, { useEffect, useState } from "react";
 import { Text, TextInput, TouchableWithoutFeedback, View } from "react-native";
 
 import { useTheme } from "../../theme/theme";

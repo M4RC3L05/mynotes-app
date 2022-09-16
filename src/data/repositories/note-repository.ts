@@ -1,7 +1,7 @@
 import * as ScopedStorage from "react-native-scoped-storage";
 
-import { NoteFile } from "../../domain/models/note-file";
-import { INoteRepository } from "../../domain/repositories/inote-repository";
+import type { NoteFile } from "../../domain/models/note-file";
+import type { INoteRepository } from "../../domain/repositories/inote-repository";
 import { fileTypeToNoteFile } from "../mappers/scoped-storage-mappers";
 
 export class NoteRepository implements INoteRepository {

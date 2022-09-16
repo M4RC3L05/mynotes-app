@@ -1,7 +1,8 @@
-import React, { PropsWithoutRef, useEffect, useState } from "react";
+import type { PropsWithoutRef } from "react";
+import React, { useEffect, useState } from "react";
 import { Text, TextInput, View } from "react-native";
 
-import { NoteFile } from "../../../domain/models/note-file";
+import type { NoteFile } from "../../../domain/models/note-file";
 import { useTheme } from "../../theme/theme";
 import { Action } from "../action";
 import { ModalBackground } from "./modal-background";

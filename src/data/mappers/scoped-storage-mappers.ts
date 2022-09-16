@@ -1,4 +1,4 @@
-import { FileType } from "react-native-scoped-storage";
+import type { FileType } from "react-native-scoped-storage";
 
 import { NoteFile } from "../../domain/models/note-file";
 import { NotesDirectory } from "../../domain/models/notes-directory";

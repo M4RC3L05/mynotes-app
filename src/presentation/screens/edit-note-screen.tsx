@@ -2,7 +2,7 @@ import { useFocusEffect, useNavigation, useRoute } from "@react-navigation/nativ
 import React, { useCallback, useRef, useState } from "react";
 import { ActivityIndicator, TextInput, View } from "react-native";
 
-import { NoteFile } from "../../domain/models/note-file";
+import type { NoteFile } from "../../domain/models/note-file";
 import { GetOrRequestANotesDirectoryUseCaseFactory } from "../../domain/use-cases/get-or-request-a-notes-directory-use-case";
 import { ReadNoteUseCaseFactory } from "../../domain/use-cases/read-note-use-case";
 import { WriteNoteUseCaseFactory } from "../../domain/use-cases/write-note-use-case";
@@ -10,7 +10,7 @@ import { Fab } from "../components/fab";
 import MarkdownRenderer from "../components/markdown-renderer";
 import { useUseCase } from "../hooks/useUseCase";
 import { useTheme } from "../theme/theme";
-import { TEditNoteScreenNavigationProp, TEditNoteScreenRouteProp } from "./screens";
+import type { TEditNoteScreenNavigationProp, TEditNoteScreenRouteProp } from "./screens";
 
 export function EditNoteScreen() {
   const route = useRoute<TEditNoteScreenRouteProp>();

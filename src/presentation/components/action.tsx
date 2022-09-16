@@ -1,4 +1,5 @@
-import React, { PropsWithoutRef } from "react";
+import type { PropsWithoutRef } from "react";
+import React from "react";
 import { Text, TouchableOpacity } from "react-native";
 
 import { useTheme } from "../theme/theme";

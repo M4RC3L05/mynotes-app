@@ -3,7 +3,7 @@ import { useFocusEffect, useIsFocused, useNavigation } from "@react-navigation/n
 import React, { useCallback, useMemo, useState } from "react";
 import { FlatList, View } from "react-native";
 
-import { NoteFile } from "../../domain/models/note-file";
+import type { NoteFile } from "../../domain/models/note-file";
 import { CreateNoteUseCaseFactory } from "../../domain/use-cases/create-note-use-case";
 import { DeleteNoteUseCaseFactory } from "../../domain/use-cases/delete-note-use-case";
 import { GetNotesUseCaseFactory } from "../../domain/use-cases/get-notes-use-case";
@@ -17,7 +17,7 @@ import { NoteCard } from "../components/note-card";
 import { NoteSearch } from "../components/note-search";
 import { useUseCase } from "../hooks/useUseCase";
 import { useTheme } from "../theme/theme";
-import { TMainScreenNavigationProp } from "./screens";
+import type { TMainScreenNavigationProp } from "./screens";
 
 function MainScreen() {
   const [newNoteDialog, setNewNoteDialog] = useState(false);

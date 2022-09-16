@@ -1,7 +1,8 @@
-import React, { PropsWithoutRef } from "react";
+import type { PropsWithoutRef } from "react";
+import React from "react";
 import { Text, View } from "react-native";
 
-import { NoteFile } from "../../domain/models/note-file";
+import type { NoteFile } from "../../domain/models/note-file";
 import { useTheme } from "../theme/theme";
 import { NoteCardAction } from "./note-card-action";
 
